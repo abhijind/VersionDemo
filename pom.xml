@@ -53,7 +53,7 @@
           <arguments>
             <argument>/C</argument>
             <argument>echo</argument>
-            <argument>releasing version ${project.version}</argument>
+            <argument>[EXEC]: releasing version ${project.version}</argument>
           </arguments>
         </configuration>
       </plugin>
@@ -63,6 +63,7 @@
         <version>2.5.3</version>
         <configuration>
           <completionGoals>exec:exec</completionGoals>
+          <preparationGoals>exec:exec</preparationGoals>
         </configuration>
       </plugin>
     </plugins>
