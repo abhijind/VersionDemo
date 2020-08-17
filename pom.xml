@@ -62,8 +62,12 @@
         <artifactId>maven-release-plugin</artifactId>
         <version>2.5.3</version>
         <configuration>
-          <completionGoals>exec:exec</completionGoals>
+          <!-- Goals to run as part of the preparation step,
+          after transformation but before committing. Space delimited -->
           <preparationGoals>exec:exec</preparationGoals>
+          <!-- Goals to run on completion of the preparation step,
+          after transformation back to the next development version but before committing. -->
+          <completionGoals>exec:exec</completionGoals>
         </configuration>
       </plugin>
     </plugins>
