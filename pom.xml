@@ -47,15 +47,31 @@
               </arguments>
             </configuration>
           </execution>
+          <execution>
+            <id>sync</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>none</phase>
+            <configuration>
+              <executable>cmd</executable>
+              <arguments>
+                <argument>/C</argument>
+                <argument>echo</argument>
+                <argument>SYNCING version ${project.version} > sample.txt</argument>
+              </arguments>
+            </configuration>
+          </execution>
         </executions>
-        <configuration>
+
+        <!--<configuration>
           <executable>cmd</executable>
           <arguments>
             <argument>/C</argument>
             <argument>echo</argument>
             <argument>[EXEC]: releasing version ${project.version}</argument>
           </arguments>
-        </configuration>
+        </configuration>-->
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -64,10 +80,12 @@
         <configuration>
           <!-- Goals to run as part of the preparation step,
           after transformation but before committing. Space delimited -->
-          <preparationGoals>exec:exec</preparationGoals>
+          <preparationGoals>exec:exec@sync</preparationGoals>
           <!-- Goals to run on completion of the preparation step,
           after transformation back to the next development version but before committing. -->
-          <completionGoals>exec:exec</completionGoals>
+          <completionGoals>exec:exec@sync</completionGoals>
+          <goals>
+          </goals>
         </configuration>
       </plugin>
     </plugins>
