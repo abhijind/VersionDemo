@@ -5,7 +5,7 @@
 
   <groupId>com.abhijind</groupId>
   <artifactId>version-demo</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 
   <name>version-demo</name>
 
@@ -19,7 +19,7 @@
     <connection>scm:git:https://github.com/abhijind/VersionDemo.git</connection>
     <developerConnection>scm:git:https://github.com/abhijind/VersionDemo.git</developerConnection>
     <url>https://github.com/abhijind/VersionDemo.git</url>
-    <tag>v${project.version}</tag>
+    <tag>version-demo-1.2</tag>
   </scm>
   <dependencies>
 
@@ -58,7 +58,7 @@
               <arguments>
                 <argument>/C</argument>
                 <argument>echo</argument>
-                <argument>SYNCING version ${project.version} > sample.txt</argument>
+                <argument>SYNCING version ${project.version} &gt; sample.txt</argument>
               </arguments>
             </configuration>
           </execution>
